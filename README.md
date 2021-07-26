@@ -23,8 +23,8 @@ $ cd /var/www/Flask/RTIS-Blackjack/rtisblackjack/
 $ sudo virtualenv venv
 $ source venv/bin/activate
 
-(venv)$ sudo pip install Flask
-(venv)$ sudo pip install paho-mqtt
+(venv)$ sudo pip3 install Flask
+(venv)$ sudo pip3 install paho-mqtt
 ```
 
 Add the following to your site configuration at `/etc/apache2/sites-available/[site].conf`
