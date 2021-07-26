@@ -49,7 +49,7 @@ client.on_message = on_message
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/blackjack/")
 def grid():
     return render_template("index2.html")
 
@@ -59,7 +59,7 @@ def json_delivery():
     return jsonify(traffic_signals)
 
 
-@app.route("/blackjack/")
+@app.route("/blackjack/map/")
 def run():
     return render_template("index.html")
 
@@ -71,5 +71,11 @@ if __name__ == '__main__':
     client.subscribe("#")
     client.loop_start()
 
-    app.run()
+    app.run(host="localhost", port=80)
+else:
+    rc = client.connect("10.30.4.149")
+    print("Connected with result code: " + str(rc))
+
+    client.subscribe("#")
+    client.loop_start()
 
