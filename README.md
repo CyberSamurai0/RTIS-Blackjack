@@ -9,8 +9,8 @@ Map view shows current traffic signal for each lane with positions, as well as p
 
 ## Images
 
-<img src="https://i.gyazo.com/246553334812d9acbb5539dc1177c1a9.jpg" width="200px" height="200px" />
-<img src ="https://i.gyazo.com/fab234093a565b83a39b27c2f1da160b.png" width="200px" height="200px" />
+<img src="https://i.gyazo.com/246553334812d9acbb5539dc1177c1a9.jpg" height="200px" />
+<img src ="https://i.gyazo.com/fab234093a565b83a39b27c2f1da160b.png" height="200px" />
 
 ## Installation
 Designed to be used with Apache WSGI
