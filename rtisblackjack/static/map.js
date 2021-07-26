@@ -88,6 +88,7 @@ let BSMToggle = L.Control.extend({
         container.style.objectFit = "contain"
         container.style.width = "30px";
         container.style.height = "30px";
+        container.style.cursor = "pointer";
         container.style.color = "black"
         container.style.border = 'none';
         container.style.borderRadius = "2px"
