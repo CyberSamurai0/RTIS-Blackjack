@@ -47,4 +47,6 @@ Add the following to your site configuration at `/etc/apache2/sites-available/[s
 Reload Apache
 ```bash
 $ sudo /etc/init.d/apache2 reload
+or
+$ sudo systemctl restart apache2
 ```
