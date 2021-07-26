@@ -51,7 +51,7 @@ app = Flask(__name__)
 
 @app.route("/blackjack/")
 def grid():
-    return render_template("index2.html")
+    return render_template("grid.html")
 
 
 @app.route("/blackjack/json")
@@ -61,7 +61,7 @@ def json_delivery():
 
 @app.route("/blackjack/map/")
 def run():
-    return render_template("index.html")
+    return render_template("map.html")
 
 
 if __name__ == '__main__':
