@@ -26,7 +26,7 @@ $ source venv/bin/activate
 (venv)$ sudo pip install paho-mqtt
 ```
 
-Add the following to your site configuration (/etc/apache2/sites-available/<site>.conf)
+Add the following to your site configuration (/etc/apache2/sites-available/\[site\].conf)
 ```
     WSGIDaemonProcess rtis-blackjack user=www-data group=www-data threads=5
     WSGIProcessGroup rtis-blackjack
