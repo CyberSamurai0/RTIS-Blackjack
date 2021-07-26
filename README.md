@@ -7,10 +7,10 @@ Grid view shows current traffic signal for each group according to the current c
 
 Map view shows current traffic signal for each lane with positions, as well as positional history for BSM-equipped vehicles
 
-## Evidence
+## Images
 
-<img src="https://i.gyazo.com/246553334812d9acbb5539dc1177c1a9.jpg" />
-<img src ="https://i.gyazo.com/fab234093a565b83a39b27c2f1da160b.png" />
+<img src="https://i.gyazo.com/246553334812d9acbb5539dc1177c1a9.jpg" width="200px" height="200px" />
+<img src ="https://i.gyazo.com/fab234093a565b83a39b27c2f1da160b.png" width="200px" height="200px" />
 
 ## Installation
 Designed to be used with Apache WSGI
