@@ -28,8 +28,8 @@ $ source venv/bin/activate
 
 Add the following to your site configuration at `/etc/apache2/sites-available/[site].conf`
 ```
-    WSGIDaemonProcess rtis-blackjack user=www-data group=www-data threads=5
-    WSGIProcessGroup rtis-blackjack
+    WSGIDaemonProcess rtisblackjack user=www-data group=www-data threads=5
+    WSGIProcessGroup rtisblackjack
     WSGIScriptAlias / /var/www/RTIS-Blackjack/rtis-blackjack.wsgi
     Alias /blackjack/static/ /var/www/RTIS-Blackjack/static
     <Directory /var/www/RTIS-Blackjack/static>
