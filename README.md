@@ -16,7 +16,7 @@ This should result in `/var/www/Flask/RTIS-Blackjack/rtisblackjack/static/grid.j
 
 Run the following
 ```bash
-$ sudo apt-get install libapache2-mod-wsgi
+$ sudo apt-get install libapache2-mod-wsgi-py3
 $ sudo a2enmod wsgi
 
 $ cd /var/www/Flask/RTIS-Blackjack/rtisblackjack/
