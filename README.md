@@ -12,14 +12,14 @@ Designed to be used with Apache WSGI
 
 Clone this repository into `/var/www/Flask`
 
-This should result in `/var/www/Flask/RTIS-Blackjack/static/grid.js` as a valid path
+This should result in `/var/www/Flask/RTIS-Blackjack/rtisblackjack/static/grid.js` as a valid path
 
 Run the following
 ```bash
 $ sudo apt-get install libapache2-mod-wsgi
 $ sudo a2enmod wsgi
 
-$ cd /var/www/Flask/RTIS-Blackjack/
+$ cd /var/www/Flask/RTIS-Blackjack/rtisblackjack/
 $ sudo virtualenv venv
 $ source venv/bin/activate
 
@@ -31,9 +31,9 @@ Add the following to your site configuration at `/etc/apache2/sites-available/[s
 ```
     WSGIDaemonProcess rtisblackjack user=www-data group=www-data threads=5
     WSGIProcessGroup rtisblackjack
-    WSGIScriptAlias / /var/www/Flask/RTIS-Blackjack/rtis-blackjack.wsgi
-    Alias /blackjack/static/ /var/www/Flask/RTIS-Blackjack/static
-    <Directory /var/www/Flask/RTIS-Blackjack/static>
+    WSGIScriptAlias / /var/www/Flask/RTIS-Blackjack/rtisblackjack/rtisblackjack.wsgi
+    Alias /blackjack/static/ /var/www/Flask/RTIS-Blackjack/rtisblackjack/static
+    <Directory /var/www/Flask/RTIS-Blackjack/rtisblackjack/static>
         Order allow,deny
         Allow from all
     </Directory>
