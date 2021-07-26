@@ -50,7 +50,7 @@ function addSignalGroup(intersectionId) {
         let item = document.createElement("div");
         item.className = `grid-item ${sigGroup}`;
         group.appendChild(item);
-        item.innerHTML = `<img class="state-img" src="/blackjack/static/state_icon_${state}.png" alt="${state}"/><h4>Group ${parseInt(sigGroup) + 1}: ${englishState(state)}</h4>`
+        item.innerHTML = `<img class="state-img" src="/static/state_icon_${state}.png" alt="${state}"/><h4>Group ${parseInt(sigGroup) + 1}: ${englishState(state)}</h4>`
     }
 
     let nav = document.createElement("div");
@@ -77,7 +77,7 @@ function updateSignalGroup(intersectionId) {
         for (let i in items) {
             let item = items[i];
             if (item.className && item.className.includes(sigGroup)) {
-                item.innerHTML = `<img class="state-img" src="/blackjack/static/state_icon_${state}.png" alt="${state}"/><h4>Group ${parseInt(sigGroup) + 1}: ${englishState(state)}</h4>`
+                item.innerHTML = `<img class="state-img" src="/static/state_icon_${state}.png" alt="${state}"/><h4>Group ${parseInt(sigGroup) + 1}: ${englishState(state)}</h4>`
             }
         }
     }
