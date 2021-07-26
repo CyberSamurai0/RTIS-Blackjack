@@ -1,4 +1,4 @@
-from Flask import Flask, redirect, render_template, jsonify
+from flask import Flask, redirect, render_template, jsonify
 import paho.mqtt.client as mqtt
 import json
 
