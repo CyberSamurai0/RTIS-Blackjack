@@ -71,5 +71,5 @@ if __name__ == '__main__':
     client.subscribe("#")
     client.loop_start()
 
-    app.run(host="localhost", port=80)
+    app.run()
 
