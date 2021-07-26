@@ -1,3 +1,5 @@
+console.log("Visualization created by Colin Saumure");
+
 let eventStateValues = {
     0: "Unavailable",
     1: "Dark",
