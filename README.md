@@ -1,7 +1,7 @@
 # Project Blackjack Visualization
 Internship project with the [Real-Time Intelligent Systems Laboratory](http://rtis.oit.unlv.edu/) at the [University of Nevada, Las Vegas](https://www.unlv.edu/)
 
-Requires a VPN connection to the City of Las Vegas. This project will not work as is without this connection.
+Requires a VPN connection to the City of Las Vegas. This project will not work as is without it
 
 Interprets J2735-standard SPaT, MAP, and BSM data and displays it in real time
 
