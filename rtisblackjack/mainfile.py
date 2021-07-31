@@ -4,16 +4,16 @@ import json
 
 client = mqtt.Client()
 traffic_signals = dict()
+psm_msgs = dict()
 
 
 def on_message(c, userdata, msg):
-    # print(msg.topic + " " + str(msg.payload))
     path = msg.topic
     path = path.split("/")
     datatype = path[6]
     if datatype == 'MAP':
         content = json.loads(str(msg.payload.decode("utf-8")))
-        if "intersectionId" in content: # Just in case something goes wrong on their end
+        if "intersectionId" in content:  # Just in case something goes wrong on their end
             if str(content["intersectionId"]) in traffic_signals:
                 traffic_signals[str(content["intersectionId"])]["MAP"] = content["map"]["value"]["MapData"]
             else:
@@ -42,6 +42,21 @@ def on_message(c, userdata, msg):
                 traffic_signals[str(content["intersectionId"])] = {
                     "BSM": content["bsm"]["value"]["BasicSafetyMessage"],
                 }
+    elif datatype == 'PSM':
+        content = json.loads(str(msg.payload.decode("utf-8")))
+        if "intersectionId" in content and "psm" in content and "ts" in content and "value" in content["psm"]:
+            if str(content["intersectionId"]) in psm_msgs:
+                if not str(content["ts"]) in psm_msgs[str(content["intersectionId"])]:
+                    # Unique Message
+                    psm_msgs[str(content["intersectionId"])].insert(0, {str(content["ts"]): content["psm"]})
+            else:
+                # Add Data for New PSM Message
+                psm_msgs[str(content["intersectionId"])] = [
+                    {str(content["ts"]): content["psm"]}
+                ]
+            # Limit 50 messages
+            psm_msgs[str(content["intersectionId"])] = psm_msgs[str(content["intersectionId"])][:50]
+
 
 
 client.on_message = on_message
@@ -59,8 +74,18 @@ def json_delivery():
     return jsonify(traffic_signals)
 
 
+@app.route("/blackjack/json_psm")
+def json_psm():
+    return jsonify(psm_msgs)
+
+
+@app.route("/blackjack/psm/")
+def psm():
+    return render_template("psm.html")
+
+
 @app.route("/blackjack/map/")
-def run():
+def map():
     return render_template("map.html")
 
 

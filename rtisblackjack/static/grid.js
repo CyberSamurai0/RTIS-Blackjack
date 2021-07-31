@@ -89,6 +89,10 @@ function gotoMap() {
     window.open("/blackjack/map")
 }
 
+function gotoPSM() {
+    window.open("/blackjack/psm")
+}
+
 function englishState(state) {
     let e = {
         "Unavailable": "Unavailable",
@@ -119,7 +123,6 @@ function parseState(state) {
 }
 
 function updateGrid() {
-    console.log("Updating")
     for (let index = 0; index < Object.keys(jsonData).length; index++) {
         let intId = Object.keys(jsonData)[index];
         let intData = jsonData[intId];
