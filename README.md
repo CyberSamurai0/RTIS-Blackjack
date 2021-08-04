@@ -45,6 +45,22 @@ Add the following to your site configuration at `/etc/apache2/sites-available/[s
     </Directory>
 ```
 
+#### Adding an additional VirtualHost (optional)
+```
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html"
+    ServerName blackjack.rtis.oit.unlv.edu
+
+    WSGIDaemonProcess rtisblackjack user=www-data group=www-data threads=5
+    WSGIProcessGroup rtisblackjack
+    WSGIScriptAlias / /var/www/Flask/RTIS-Blackjack/rtisblackjack/rtisblackjack.wsgi
+    <Directory /var/www/Flask/RTIS-Blackjack/rtisblackjack/static>
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
 Reload Apache
 ```bash
 $ sudo /etc/init.d/apache2 reload
