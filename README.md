@@ -15,34 +15,29 @@ Map view shows current traffic signal for each lane with positions, as well as p
 <img src ="https://i.gyazo.com/fab234093a565b83a39b27c2f1da160b.png" height="200px" />
 
 ## Installation
-Designed to be used with Apache WSGI
+Designed to be used with Apache
 
-Clone this repository into `/var/www/Flask`
+Merge this repository with `/var/www/`
 
-This should result in `/var/www/Flask/RTIS-Blackjack/rtisblackjack/static/grid.js` as a valid path
+This should result in `/var/www/html/blackjack/static/grid.js` as a valid path
 
 Run the following
 ```bash
-$ sudo apt-get install libapache2-mod-wsgi-py3
-$ sudo a2enmod wsgi
+$ sudo apt-get install python3
+$ sudo apt-get install python3-virtualenv
+$ sudo apt-get install python3-pip
 
-$ cd /var/www/Flask/RTIS-Blackjack/rtisblackjack/
+$ cd /var/www/RTIS-Blackjack/rtisblackjack/
 $ sudo virtualenv venv
 $ source venv/bin/activate
 
-(venv)$ sudo pip3 install Flask
 (venv)$ sudo pip3 install paho-mqtt
 ```
 
-Add the following to your site configuration at `/etc/apache2/sites-available/[site].conf`
+Add the following to your site configuration at `/etc/apache2/sites-available/[site].conf`. This will enable the .htaccess files to set default documents in directories. Merge with existing configurations as needed.
 ```
-    WSGIDaemonProcess rtisblackjack user=www-data group=www-data threads=5
-    WSGIProcessGroup rtisblackjack
-    WSGIScriptAlias / /var/www/Flask/RTIS-Blackjack/rtisblackjack/rtisblackjack.wsgi
-    Alias /blackjack/static/ /var/www/Flask/RTIS-Blackjack/rtisblackjack/static
-    <Directory /var/www/Flask/RTIS-Blackjack/rtisblackjack/static>
-        Order allow,deny
-        Allow from all
+    <Directory /var/www/>
+        AllowOverride All
     </Directory>
 ```
 
@@ -52,3 +47,13 @@ $ sudo /etc/init.d/apache2 reload
 or
 $ sudo systemctl restart apache2
 ```
+
+## Startup
+
+Ensure the host machine is connected to the City of Las Vegas VPN.
+Run main.py using the following:
+```bash
+$ python3 main.py &
+```
+
+That's it! You can view it at yourwebsite.com/blackjack.
