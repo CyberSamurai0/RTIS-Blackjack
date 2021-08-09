@@ -1,1 +1,0 @@
-{"3485": [{"1628492488290": {"messageId": 32, "value": {"PersonalSafetyMessage": {"basicType": "aPEDESTRIAN", "secMark": 65355, "msgCnt": 54, "id": "54575148", "position": {"lat": 361649843, "long": -1151566683, "elevation": 0}, "accuracy": {"semiMajor": 255, "semiMinor": 255, "orientation": 65355}, "speed": 72, "heading": 20946, "crossRequest": false, "crossState": true}}}}]}
