@@ -45,7 +45,7 @@ Add the following to your site configuration at `/etc/apache2/sites-available/[s
     </Directory>
 ```
 
-### Adding an additional VirtualHost (optional)
+#### Adding an additional VirtualHost (optional)
 ```
 <VirtualHost *:80>
     DocumentRoot "/var/www/html"
