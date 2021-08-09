@@ -53,7 +53,7 @@ $ sudo systemctl restart apache2
 Ensure the host machine is connected to the City of Las Vegas VPN.
 Run main.py using the following:
 ```bash
-$ python3 main.py &
+$ python3 /var/www/rtisblackjack/main.py &
 ```
 
 That's it! You can view it at yourwebsite.com/blackjack.
