@@ -27,7 +27,7 @@ $ sudo apt-get install python3
 $ sudo apt-get install python3-virtualenv
 $ sudo apt-get install python3-pip
 
-$ cd /var/www/RTIS-Blackjack/rtisblackjack/
+$ cd /var/www/rtisblackjack/
 $ sudo virtualenv venv
 $ source venv/bin/activate
 
