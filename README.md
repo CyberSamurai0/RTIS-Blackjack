@@ -1,4 +1,6 @@
 # Project Blackjack Visualization
+**This project is no longer maintained but remains available for educational purposes.**
+
 Internship project with the [Real-Time Intelligent Systems Laboratory](http://rtis.oit.unlv.edu/) at the [University of Nevada, Las Vegas](https://www.unlv.edu/).
 
 Requires a VPN connection to the City of Las Vegas. This project will not work as is without it.
